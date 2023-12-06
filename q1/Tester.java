@@ -3,7 +3,7 @@ package q1;
 import java.util.Scanner;
 
 public class Tester {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
 
