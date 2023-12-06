@@ -1,59 +1,58 @@
-package q2;
 
 public abstract class BankAccount {
-    protected String _num;
-    protected String _owner;
-    protected String _id;
-    protected double _balance;
+    protected String num;
+    protected String owner;
+    protected String id;
+    protected double balance;
 
     public BankAccount(String num, String name, String id, double balance) {
-        _num = num;
-        _owner = name;
-        _id = id;
-        _balance = balance;
+        this.num = num;
+        this.owner = name;
+        this.id = id;
+        this.balance = balance;
     }
 
     public void setNum(String num) {
-        _num = num;
+        this.num = num;
     }
 
     public void setOwner(String owner) {
-        _owner = owner;
+        this.owner = owner;
     }
 
     public void setID(String id) {
-        _id = id;
+        this.id = id;
     }
 
     public void setBalance(int balance) {
-        _balance = balance;
+        this.balance = balance;
     }
 
     public String getNum() {
-        return _num;
+        return this.num;
     }
 
     public String getOwner() {
-        return _owner;
+        return this.owner;
     }
 
     public String getID() {
-        return _id;
+        return this.id;
     }
 
     public double getBalance() {
-        return _balance;
+        return this.balance;
     }
 
     public void deposit(double amount) {
-        _balance += amount;
+        this.balance += amount;
     }
 
     public void withdraw(double amount) throws IllegalBalance {
         try {
             // If there is enough money, subtract the amount from the balance.
-            if (_balance >= amount) {
-                _balance -= amount;
+            if (this.balance >= amount) {
+                this.balance -= amount;
             } else {
                 // If there is not enough money, throw an exception.
                 throw new IllegalBalance("The balance is not sufficient to perform the withdrawal.");
@@ -68,9 +67,9 @@ public abstract class BankAccount {
 
     @Override
     public String toString() {
-        return "Account status:\n\tNumber: " + _num + "\n\towner: " + _owner + "\n\tID: " + _id
-                + "\n\taccount Balance: "
-                + _balance;
+        return "Account status:\n\tNumber: " + this.num + "\n\towner: " + this.owner + "\n\tID: " + this.id
+        + "\n\taccount Balance: "
+        + this.balance;
     }
 
     @Override
@@ -78,8 +77,8 @@ public abstract class BankAccount {
         if (obj instanceof BankAccount) {
             BankAccount other = (BankAccount) obj;
 
-            return other._num.equals(_num) && other._owner.equals(_owner)
-                    && other._id.equals(_id) && other._balance == _balance;
+            return other.num.equals(this.num) && other.owner.equals(this.owner)
+            && other.id.equals(this.id) && other.balance == this.balance;
         }
 
         return false;

@@ -1,30 +1,30 @@
-package q2;
+ 
 
 public class InterestChecking extends NoServiceChargeChecking {
 
     private final double DEF_INTEREST_RATE = 0.05;
-    private double _interestRate;
+    private double interestRate;
 
     public InterestChecking(String num, String name, String id, double balance) {
         super(num, name, id, balance);
-        _interestRate = DEF_INTEREST_RATE;
+         this.interestRate = DEF_INTEREST_RATE;
     }
 
     public InterestChecking(String num, String name, String id, double balance, double rate) {
         super(num, name, id, balance);
-        _interestRate = rate;
+         this.interestRate = rate;
     }
 
     public double getInterestRate() {
-        return _interestRate;
+        return  this.interestRate;
     }
 
     public void setInterestRate(double rate) {
-        _interestRate = rate;
+         this.interestRate = rate;
     }
 
     public double calculateInterest() {
-        return _balance * _interestRate;
+        return  this.balance *  this.interestRate;
     }
 
     @Override
@@ -34,13 +34,13 @@ public class InterestChecking extends NoServiceChargeChecking {
 
     @Override
     public String toString() {
-        return super.toString() + "\n\tinterest rate: " + _interestRate;
+        return super.toString() + "\n\tinterest rate: " +  this.interestRate;
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof InterestChecking) {
             InterestChecking other = (InterestChecking) obj;
-            return super.equals(other) && other._interestRate == _interestRate;
+            return super.equals(other) && other.interestRate ==  this.interestRate;
         }
         return false;
     }
